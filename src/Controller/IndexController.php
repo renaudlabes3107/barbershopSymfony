@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController extends AbstractController
 {
     /**
-     * @Route("/x", name="index") 
+     * @Route("/", name="index") 
      */
 
      

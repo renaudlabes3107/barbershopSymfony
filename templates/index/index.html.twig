@@ -3,18 +3,214 @@
 {% block title %}Hello IndexController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<header class="main-header">
+    <nav class="main-navigation">
+      <a href="index.html" class="main-header-logo">
+        <img src="img/index-logo-new.png" width="960" height="360" alt="barber shop Noisy centre-ville">
+      </a>
+      <div class="main-navigation-wrapper">
+        <div class="container">
+          <ul class="site-navigation">
+            <!--Utilisation des listes à puce et des ancrages ( bulleted list)-->
+            <li><a href="OurTeam.html">Notre équipe </a></li>
+            <li><a href="#news-point"> Actualités </a></li>
+            <li><a href="price.html">Nos prix</a></li>
+            <li><a href="catalog.html">Nos produits </a></li>
+            <!--  Rajouter avis de nos clients dans les rubriques-->
+            <li><a href="#news-point"> Nos horaires </a></li>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <li><a href="#contacts-point"></a></li>
+            <!--Relier à plus bas dans la page , à la section clas-->
+          </ul>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/stagiaire/Desktop/renaud/barber-shop-symfony/src/Controller/IndexController.php'|file_link(0) }}">src/Controller/IndexController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/stagiaire/Desktop/renaud/barber-shop-symfony/templates/index/index.html.twig'|file_link(0) }}">templates/index/index.html.twig</a></code></li>
-    </ul>
-</div>
+        </div>
+      </div>
+    </nav>
+  </header><main class="container">
+    <h1 class="visually-hidden">?</h1>
+
+    <section class="features" id="info-point">
+      <h2 class="visually-hidden">Presentation </h2>
+      <ul class="features-list">
+        <li class="feature-item">
+          <h3>
+            <center>Originalité</center>
+          </h3>
+          <p>Que ce soit pour une coupe de cheveux, ou pour votre barbe, apprêtez vous à vivre un rituel,un voyage nostalgique au coeur du bien-être.  <br> <br>  Vous allez revivre ne époque plus simple où les hommes se réunissaient chez le coiffeur du coin pour discuter de tout. <br> <br>
+             Les barbiers proposent des coupes de cheveux traditionnelles et courtes, ainsi que des styles
+            contemporains  plus branchés.
+
+          </p>
+        </li>
+        <li class="feature-item">
+          <h3>
+            <center>Service de qualité</center>
+          </h3>
+          <p>Alliant des soins modernes et outils traditionnels comme le coupe-chou et 
+            le blaireau, vous bénéficierez d'un savoir faire de  très grande qualité. <br><br> Nos barbiers savent non seulement tailler une barbe selon votre désir et en prendre soin
+            . <br> <br>
+            Notre équipe, soucieuse de votre bien-être vous donnera de précieux conseils afin de bien entretenir votre barbe.</p>
+        </li>
+        <li class="feature-item">
+          <h3>
+            <center>Nos locaux</center>
+          </h3>
+          <p>Mélange subtile d'élégance raffinnée et de style éthique, vous vous sentirez à l'aise dans notre
+            Barber-Shop.  <br> <br>
+            Notre Hygiène est irréprochable, nos locaux nettoyés et notre matériel systématiquement  désinfecté . <br> <br>
+            Vous trouverez toujours des masques et du gel. </p>
+        </li>
+        <li class="feature-item">
+          <h3>
+            <center>Prix</center>
+          </h3>
+          <p>Nos prestations sont d'un excellent rapport qualité prix. Nous souhaitons avoir une clientèle toujours
+            satisfaite que nous prenons plaisir à fidéliser</p>
+        </li>
+       
+      </ul>
+    </section>
+
+    <div class="index-columns">
+
+      <!---Création d'une section  à contenu thématique avec Section
+				ici on va créer deux section class-->
+      <section class="news" id="news-point">
+        <h2>Actualités du Barber-Shop de Noisy-Le-grand</h2>
+        <ul class="news-list">
+          <li class="news-item">
+            <p></p>
+            <time datetime="2020-08-14">le 14 aout 2020</time>
+          </li>
+          <li class="news-item">
+
+            <p>
+              <!--balise marquee telle une "breaking news"-->
+              <marquee behavior="slide">Nous suivons scrupuleusement le protocole sanitaire définit par <br> les
+                pouvoirs publics : <br> <br>
+                - Gel hydroalcoolique a votre disposition à l’entrée du salon, <br> <br>
+                - salle d'attente de 3 clients max avec plus d'un metre <br> entre les fauteuils <br>
+                - masques, gants et visières pour les barbiers et coiffeurs <br> <br>
+                - désinfections systématique de notre matériel <br> après chaque passage. <br> <br>
+                SOYONS VIGILANT, TOUS, NOUS POUVONS VAINCRE <br> LE VIRUS. <br> <br> <br>
+                REAGISSONS ENSEMBLE !<br> </marquee>
+
+            </p>
+            <!-- L'élément ci dessous est conçu pour présenter des dates et des heures a
+								u sein d'un document. Elles sont écrites dans un format compréhensible par un programme, ce qui peut s'avérer utile pour les agents utilisateur 
+								qui offrent des fonctionnalités de gestion de calendrier/agenda-->
+            <time datetime="2020-08-14">le 14 aout 2020</time>
+            <!--Il a également permet de représenter une période donnée afin de traduire la date ou l'instant dans un format informatique
+								(permettant aux moteurs de recherche d'exploiter ces données ou de créer des rappels).-->
+          </li>
+
+        </ul>
+
+        <a class="button" href="#"> NEWS</a>
+     
+      </section>
+
+      <section class="gallery">
+        <h2>Nos horaires</h2>
+        <div class="gallery-container">
+          <figure class="gallery-content">
+            <center>
+            lun.:	09:00 – 20:00 <br>
+            mar.:	09:00 – 20:00 <br>
+            mer.:	09:00 – 20:00 <br> 
+            jeu.:	09:00 – 20:00 <br>
+            ven.:	09:00 – 13:00, <br>
+                  14:30 – 20:00 <br>
+                  sam.:	09:00 – 20:00 <br>
+                  dim.:	09:30 – 20:00
+                  </center>
+                  <div class="gallery-container">
+                    <figure class="hygiene">
+                     <marquee behavior="" direction="">Du gel hydroalcoolique est à votre disposition à l'entrée du Barber-shop !</marquee> 
+                    <center><img src="img/ServezVous.jpg" alt=""></center>  
+                      
+         
+        </div>
+      </section>
+
+    </div>
+    <div class="gel">
+
+    </div>
+
+
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+
+      <p class="footer-contacts">
+        Barber Shop du centre-ville<br>
+        179 rue Pierre Brossolette <br>
+        93160 Noisy-le-grand<br>
+        Тéléphone: 09-52-30-80-03
+      </p>
+      <p>
+
+      </p>
+      <div class="footer-social">
+        <b>Rejoignez nous sur les réseaux sociaux !</b>
+        <ul>
+
+          <li>
+            <a class="social-button" href="https://fr.linkedin.com/in/labes-renaud-02ba611"><span
+                class="visually-hidden">Linkedin</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="37" height="25" viewBox="0 0 448 512">
+                <path
+                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                  fill="#fff"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="social-button" href="https://www.facebook.com/Anton.Maksymchak"><span
+                class="visually-hidden">Facebook</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 10.15 21.74">
+                <path
+                  d="M3.34 1.12A4.77 4.77 0 0 1 6.53 0h3.61v3.81H7.81a1.07 1.07 0 0 0-1.09.83v2.55h3.42c-.08 1.23-.24 2.45-.41 3.67h-3v10.87H2.21V10.86H0V7.21h2.19V3.66a3.83 3.83 0 0 1 1.15-2.54z"
+                  fill="#fff"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="social-button" href="https://github.com/maksymchak"><span class="visually-hidden">GitHub</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 448 512">
+                <path
+                  d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"
+                  fill="#fff"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="social-button" href="https://www.facebook.com/"><span class="visually-hidden">Facebook</span>
+              <svg height="2048" viewBox="0 0 512 512" width="2048" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m512 256c0 141.386719-114.613281 256-256 256s-256-114.613281-256-256 114.613281-256 256-256 256 114.613281 256 256zm0 0"
+                  fill="#4a7aff" />
+                <path
+                  d="m267.234375 511.738281c136.171875-5.878906 244.765625-118.121093 244.765625-255.738281 0-.996094-.027344-1.988281-.039062-2.984375l-177.699219-177.703125-190 198.59375 105.566406 105.566406-48.675781 66.183594zm0 0"
+                  fill="#0053bf" />
+                <path
+                  d="m334.261719 75.3125v57.96875s-66.554688-9.660156-66.554688 33.277344v42.9375h60.113281l-7.511718 65.480468h-52.601563v170.679688h-66.554687v-170.679688l-56.894532-1.074218v-64.40625h55.820313v-49.378906s-3.683594-73.457032 68.703125-86.949219c30.058594-5.605469 65.480469 2.144531 65.480469 2.144531zm0 0"
+                  fill="#fff" />
+                <path
+                  d="m334.261719 133.28125v-57.96875s-35.421875-7.75-65.480469-2.144531c-4.695312.875-9.0625 2.007812-13.136719 3.347656v369.140625h12.0625v-170.679688h52.597657l7.515624-65.480468h-60.113281s0 0 0-42.9375 66.554688-33.277344 66.554688-33.277344zm0 0"
+                  fill="#dce1eb" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer-copyright">
+        <b>Powered by </b>
+        <a class="button" href="https://www.linkedin.com/in/anton-maksymchak">Renaud LABES </a>
+      </p>
+    </div>
+  </footer>
 {% endblock %}

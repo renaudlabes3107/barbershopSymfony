@@ -18,7 +18,9 @@
             </tr>
         </thead>
         <tbody>
-        {% for barber_product in barber_products %}
+        {% for barber_product in barber_products %} 
+     {# Crée une boucle sur l'ensemnle des produits. Cela va permettre d'afficher un a un mes produits, 
+     on "boucle" en quelque sorte sur la BDD existante et ses produits #}
             <tr>
                 <td>{{ barber_product.id }}</td>
                 <td>{{ barber_product.nom }}</td>

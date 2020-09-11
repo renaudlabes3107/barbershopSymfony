@@ -42,6 +42,26 @@ class BarberProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+
+            // Je récupère les informations du fichier uploadé
+            $photoUploade = $form->get("photo")->getData();
+
+            // Je récupère le nom du fichier uploadé 
+            $nomPhoto = pathinfo($photoUploade->getClientOriginalName(), PATHINFO_FILENAME);
+
+            // Je remplace les espaces dans le nom du fichier
+            $nomPhoto = str_replace(" ", "_", $nomPhoto);
+
+            // Je rajoute un string unique (pour éviter les fichiers doublons) et l'extension du fichier téléchargé
+            $nomPhoto .= uniqid() . "." . $photoUploade->guessExtension();
+
+            // J'enregistre le fichier uploadé sur mon serveur, dans le dossier public/images
+            $photoUploade->move("images", $nomPhoto);
+
+            // Pour enregistrer l'information en BDD :
+            $barberProduct->setPhoto($nomPhoto);
+            
+
             $entityManager->persist($barberProduct);
             $entityManager->flush();
 

@@ -20,9 +20,10 @@
                 <td>{{ barber_product.description }}</td>
             </tr>
             <tr>
-                <th>Photo</th>
-                <td>{{ barber_product.photo }}</td>
-            </tr>
+            
+				<th>Photo</th>
+				<img src="{{ asset('/images/' ~ barber_product.photo) }}" alt="image product"/>
+			</tr>
             <tr>
                 <th>Prix</th>
                 <td>{{ barber_product.prix }}</td>
